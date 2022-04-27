@@ -1,0 +1,11 @@
+nav {
+  background-color: var(--main-bg-color);
+
+}
+.navbar-brand {
+  height: 8rem;
+}
+
+.navbar-logo {
+  height: 100%;
+}
