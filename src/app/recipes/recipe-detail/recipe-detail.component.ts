@@ -12,7 +12,7 @@ export class RecipeDetailComponent {
 
   constructor(private recipeService: RecipeService) {}
 
-  shoppingListRoute() {
+  onAddToShoppinglist() {
     this.recipeService.addIngredientsToShoppingList(this.recipe.ingredients);
   }
 }

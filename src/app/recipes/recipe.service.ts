@@ -3,7 +3,6 @@ import { EventEmitter, Injectable } from '@angular/core';
 import { Ingredient } from '../shared/ingredient.model';
 import { ShoppingListService } from '../shopping-list/shopping-list.service';
 import { Recipe } from "./recipe.model";
-
 @Injectable()
 
 export class RecipeService {
@@ -49,9 +48,7 @@ export class RecipeService {
     )
   ];
 
-  constructor(private shoppingListService: ShoppingListService) {
-
-  }
+  constructor(private slService: ShoppingListService) { }
 
   // this function returns the this array copied so to get access from outside
   getRecipes() {
@@ -59,6 +56,6 @@ export class RecipeService {
   }
 
   addIngredientsToShoppingList(ingredients: Ingredient[]){
-    this.shoppingListService.addIngredients(ingredients)
+    this.slService.addIngredients(ingredients);
   }
 }

@@ -1,4 +1,4 @@
-import { EventEmitter } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 import { Ingredient } from '../shared/ingredient.model';
 export class ShoppingListService {
 
@@ -13,6 +13,8 @@ export class ShoppingListService {
   // onIngredientAdded(ingredient: Ingredient){
   //   this.ingredients.push(ingredient);
   // }
+
+  constructor() {}
 
   //since we cannot access the same array we need this function to copy the same array
   getIngredients(){
