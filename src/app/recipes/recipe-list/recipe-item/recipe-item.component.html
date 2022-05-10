@@ -1,13 +1,14 @@
 <a
-href="#"
-class="list-group-item clearfix"
-(click)="seeDetails()"
+  class="list-group-item clearfix"
+  style="cursor: pointer;"
+  [routerLink]="[index]"
+  routerLinkActive="active"
 >
 <div>
   <h4 class="list-group-item-heading">{{recipe.name}}</h4>
   <p class="list-group-item-text">{{recipe.description}}</p>
 </div>
 <span>
-  <img [src]="recipe.imagePath" alt="{{recipe.name}}" class="img-fluid">
+  <img [src]="recipe.imagePath" alt="{{recipe.name}}" class="img-fluid" style="max-height: 10rem;">
 </span>
 </a>
