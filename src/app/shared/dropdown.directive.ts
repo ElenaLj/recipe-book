@@ -9,7 +9,7 @@ export class DropdownDirective {
   isOpen = false;
   elRef: any;
 
-  @HostListener('document:click', ['$event']) toggleOpen(event: Event){
+  @HostListener('click', ['$event']) toggleOpen(event: Event){
     this.isOpen = !this.isOpen;
   }
 }
