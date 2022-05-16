@@ -1,1 +1,85 @@
-<h5>Recipe edited succesfully!</h5>
+<div class="row">
+  <div class="col-xs-12">
+    <form [formGroup]="recipeForm" (ngSubmit)="onSubmit()">
+      <div class="row">
+        <div class="col-xs-12">
+          <button type="submit" class="btn btn-success">Save</button>
+          <button type="button" class="btn btn-danger">Delete</button>
+        </div>
+        <!-- Recipe name  -->
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="form-group">
+              <label for="name">Recipe name</label>
+              <input
+                type="text"
+                id="name"
+                class="form-control"
+                formControlName="name">
+            </div>
+          </div>
+        </div>
+
+        <!-- Image -->
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="form-group">
+              <label for="imagePath">Change the image URL</label>
+              <input
+                type="text"
+                id="imagePath"
+                class="form-control"
+                formControlName="imagePath">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <img src="" alt="" class="img-fluid">
+          </div>
+        </div>
+
+        <!-- Description -->
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="form-group">
+              <label for="description">Description</label>
+              <textarea
+                name="description"
+                id="description"
+                rows="10"
+                class="form-control"
+                formControlName="description"></textarea>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ingredients -->
+        <div class="row">
+          <div class="col-xs-12" formArrayName="ingredients">
+            <div
+              class="row"
+              *ngFor="let ingredientsCtrl of recipeForm.get('ingredients')['controls']; let i = index"
+              [[formGroupName]="i"]>
+              <div class="col-xs-8">
+                <input
+                  type="text"
+                  class="form-control"
+                  formControlName="name">
+              </div>
+              <div class="col-xs-2">
+                <input
+                  type="text"
+                  class="form-control"
+                  formControlName="amount">
+              </div>
+              <div class="col-xs-2">
+                <button class="btn btn-danger">x</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

@@ -49,7 +49,7 @@ export class RecipeService {
 
   constructor(private slService: ShoppingListService) { }
 
-  // this function returns the this array copied so to get access from outside
+  // this function returns this array copied so to get access from outside
   getRecipes() {
     return this.recipes.slice();
   }
