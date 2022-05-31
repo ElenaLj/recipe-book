@@ -1,11 +1,12 @@
+/*  Assets */
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,500;0,700;1,300;1,500;1,700&display=swap');
+
 /* You can add global styles to this file, and also import other style files */
 :root {
   --main-bg-color: #ffffff;
   --text-size: 1rem;
 }
 
-/*  Assets */
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,500;0,700;1,300;1,500;1,700&display=swap');
 
 /* Global styles */
 body {
