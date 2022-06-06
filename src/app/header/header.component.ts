@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from "@angular/core";
+import { Component } from "@angular/core";
 import { DataStorageService } from "../shared/data-storage.service";
 
 @Component({
@@ -19,5 +19,9 @@ export class HeaderComponent {
 
   onSaveData() {
     this.dataStorageService.storeRecipes();
+  }
+
+  onFetchRecipes() {
+    this.dataStorageService.fetchRecipes()
   }
 }
