@@ -9,7 +9,7 @@ import { ShoppingListService } from './shopping-list.service';
   styleUrls: ['./shopping-list.component.css']
 })
 export class ShoppingListComponent implements OnInit, OnDestroy {
-  ingredients: Observable<{ ingredients }>;
+  ingredients: Observable<{ ingredients: Ingredient[] }>; // TODO maybe this was the error, check!
   //   new Ingredient('Gnocchi', 250),
   //   new Ingredient('Noodles', 500)
   // ]
@@ -22,10 +22,6 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.ingredients = this.store.select('shoppingList');
-    this.ingredients = this.shoppingListService.getIngredients();
-    this.subscription = this.shoppingListService.ingredientsChanged.subscribe((ingredients: Ingredient[]) => {
-      this.ingredients = ingredients;
-    })
   }
 
   ngOnDestroy(): void {

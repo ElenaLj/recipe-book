@@ -1,10 +1,10 @@
-import { Ingredient } from '../shared/ingredient.model';
 import { Subject } from 'rxjs';
+import { Ingredient } from '../shared/ingredient.model';
 export class ShoppingListService {
 
   private ingredients: Ingredient[] = [
-    new Ingredient('Gnocchi', 250),
-    new Ingredient('Noodles', 500)
+    new Ingredient('Apples', 250),
+    new Ingredient('Tomatoes', 500)
   ];
 
   // new event emitter to inform our component that new data is available
@@ -16,15 +16,13 @@ export class ShoppingListService {
   //   this.ingredients.push(ingredient);
   // }
 
-  constructor() {}
-
   //since we cannot access the same array we need this function to copy the same array
-  getIngredients(){
+  getIngredients() {
     return this.ingredients.slice();
   }
 
   // this method simply returns the selected ingredient
-  getIngredient(index: number){
+  getIngredient(index: number) {
     return this.ingredients[index];
   }
 
@@ -38,12 +36,12 @@ export class ShoppingListService {
     this.ingredientsChanged.next(this.ingredients.slice());
   }
 
-  updateIngredient(index: number, newIngredient: Ingredient){
+  updateIngredient(index: number, newIngredient: Ingredient) {
     this.ingredients[index] = newIngredient;
     this.ingredientsChanged.next(this.ingredients.slice());
   }
 
-  deleteIngredient(index: number){
+  deleteIngredient(index: number) {
     this.ingredients.splice(index, 1);
     this.ingredientsChanged.next(this.ingredients.slice());
   }
