@@ -9,7 +9,7 @@ import { ShoppingListService } from './shopping-list.service';
   styleUrls: ['./shopping-list.component.css']
 })
 export class ShoppingListComponent implements OnInit, OnDestroy {
-  ingredients: Observable<{ ingredients: Ingredient[] }>; // TODO maybe this was the error, check!
+  ingredients: Observable<{ ingredients: Ingredient[] }>;
   //   new Ingredient('Gnocchi', 250),
   //   new Ingredient('Noodles', 500)
   // ]
