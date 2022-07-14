@@ -1,5 +1,8 @@
 <div class="row">
   <div class="col-md-offset-3 col-md-6">
+    <div class="alert alert-danger" *ngIf="error">
+      <span> {{ error }} </span>
+    </div>
     <form #form="ngForm" (ngSubmit)="onSubmit(form)" *ngIf="!isLoading">
       <div class="form-group">
         <label for="email">email</label>
@@ -16,13 +19,10 @@
         </button>
         |
         <button class="btn btn-secondary" (click)="onSwitchMode()" type="button">
-          {{ isLoginMode ? 'Switch to login' : 'Switch to sign up' }}
+          {{ isLoginMode ? 'Switch to sign up' : 'Switch to login' }}
         </button>
       </div>
     </form>
     <app-spinner *ngIf="isLoading"></app-spinner>
-    <div class="alert alert-danger" *ngIf="error">
-      <span> {{ error }} </span>
-    </div>
   </div>
 </div>
